@@ -1,18 +1,41 @@
-<h1>Login</h1>
-<form [formGroup]="myform" (ngSubmit)="SubmitDetails()">
-  
-   <div>
-       <input type="text" id="username" name="username" placeholder="username *" formControlName="username">
-       <span *ngIf="myform.controls.username?.errors?.required">Username is required</span>
-       <span *ngIf="myform.value.username.required && myform.value.username.touched">Username is required</span>
-   </div>
-   <div><br>
-    <input type="password" id="password" name="password" placeholder="password *" formControlName="password"><br>
-    <span *ngIf="myform.controls.password?.errors?.required">password is required</span>
-    <span *ngIf="myform.value.password.required && myform.value.password.touched">Username is required</span>
-   </div>
-   <br>
-   <br>
-   <button type="submit">Login</button>
-
-</form>
+<mat-toolbar color="primary"></mat-toolbar>
+<div class="docs-example-viewer-wrapper" >
+    <div class="docs-example-viewer-title mat-elevation-z2">
+        <div class="docs-example-viewer-title-spacer">
+            <h3>Login</h3>
+            <div><strong>New User? </strong><button mat-raised-button=""
+                    class="mat-focus-indicator mat-elevation-z4 mat-raised-button mat-button-base" tabindex="0"><span
+                        class="mat-button-wrapper">Register</span><span matripple=""
+                        class="mat-ripple mat-button-ripple"></span><span
+                        class="mat-button-focus-overlay"></span></button></div>
+        </div>
+    </div>
+    <div class="docs-example-viewer-body">
+        <div class="full-width">
+            <mat-card class="my-card">
+                <mat-card-subtitle *ngIf="error">
+                    <mat-error>{{error}}</mat-error>
+                </mat-card-subtitle>
+                <mat-card-content>
+                        <mat-form-field class="full-width">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="Username" [formControl]="username" required type="text">
+                            <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field  class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon style="font-size:20px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                          </mat-form-field>
+                        
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="login()">LOGIN</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

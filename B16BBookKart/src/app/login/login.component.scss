@@ -1,0 +1,59 @@
+
+.docs-example-viewer-wrapper {
+    width: 40%;
+}
+.docs-example-viewer-wrapper {
+    border: 0;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 24%), 0 0 2px rgb(0 0 0 / 12%);
+    margin: 1em auto;
+    border-radius: 4px;
+}
+.mat-card-actions{
+    text-align: right;
+}
+.docs-example-viewer-title {
+    background: #ff4081;
+}
+.docs-example-viewer-title {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    color: #fff;
+}
+.docs-example-viewer-title-spacer {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+}
+h1, h2, h3, h4, h5 {
+    margin-bottom: 0;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.h3, h3 {
+    font-size: 1.75rem;
+}
+.full-width{
+    width: 100%;
+}
+.docs-example-viewer-body {
+    padding: 15px;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+.mat-card{
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon {
+    width: 1em;
+}
